@@ -1,3 +1,4 @@
+## Do not forget to open console when you run the app to see when components are rendered ;)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

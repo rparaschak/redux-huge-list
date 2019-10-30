@@ -1,5 +1,5 @@
 const initialNotNormalizedState = {
-    todos: Array(5000).fill(0).map((el, id) => ({id, action: id}))
+    todos: Array(1000).fill(0).map((el, id) => ({id, action: id}))
 };
 
 export const notNormalizedTodos = (state = initialNotNormalizedState, action) => {
@@ -21,7 +21,7 @@ export const notNormalizedTodos = (state = initialNotNormalizedState, action) =>
 
 /** Normalized below */
 
-const todos = Array(5000).fill(0).map((el, id) => ({id, action: id}));
+const todos = Array(1000).fill(0).map((el, id) => ({id, action: id}));
 
 const initialNormalizedState = {
     todosById: todos.reduce((todosById, todo) => { todosById[todo.id] = todo; return todosById; }, {}),
