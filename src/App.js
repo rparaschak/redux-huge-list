@@ -3,9 +3,8 @@ import {Provider} from 'react-redux'
 import store from './store';
 import {NotNormalizedComponent} from "./components/NotNormalizedComponent";
 import {NormalizedComponent} from "./components/NormalizedComponent";
-import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
+import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -17,14 +16,14 @@ function App() {
                         <li><NavLink to="/not-normalized">Not Normalized</NavLink></li>
                         <li><NavLink to="/normalized">Normalized</NavLink></li>
                     </ul>
-                    <div>
+                    {<div>
                         <Route exact path="/not-normalized">
                             <NotNormalizedComponent/>
                         </Route>
                         <Route path="/normalized">
                             <NormalizedComponent/>
                         </Route>
-                    </div>
+                    </div>}
                 </Router>
 
             </Provider>

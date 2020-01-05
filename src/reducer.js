@@ -1,5 +1,5 @@
 const initialNotNormalizedState = {
-    todos: Array(1000).fill(0).map((el, id) => ({id, action: id}))
+    todos: Array(100).fill('0').map((el, id) => ({id, action: id}))
 };
 
 export const notNormalizedTodos = (state = initialNotNormalizedState, action) => {
@@ -21,10 +21,13 @@ export const notNormalizedTodos = (state = initialNotNormalizedState, action) =>
 
 /** Normalized below */
 
-const todos = Array(1000).fill(0).map((el, id) => ({id, action: id}));
+const todos = Array(100).fill('0').map((el, id) => ({id, action: id}));
 
 const initialNormalizedState = {
-    todosById: todos.reduce((todosById, todo) => { todosById[todo.id] = todo; return todosById; }, {}),
+    todosById: todos.reduce((todosById, todo) => {
+        todosById[todo.id] = todo;
+        return todosById;
+    }, {}),
     todosIds: todos.map((el, id) => id),
 };
 
@@ -41,6 +44,21 @@ export const normalizedTodos = (state = initialNormalizedState, action) => {
             },
 
         };
+    }
+
+    return state;
+};
+
+const initialIncrementState = {
+    index: 0,
+};
+
+export const incrementReducer = (state = initialIncrementState, action) => {
+
+    if (action.type === 'INCREMENT') {
+        return {
+            index: action.payload.index,
+        }
     }
 
     return state;

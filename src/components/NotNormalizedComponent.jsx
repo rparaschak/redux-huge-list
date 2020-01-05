@@ -1,13 +1,16 @@
 import React, {useCallback} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
-import {notNormalizedTodos} from "../reducer";
+
 import {NotNormalizedTodoItem} from "./NotNormalizedTodoItem";
+import {useMySelector} from "../utils/useMySelector";
 
 export const NotNormalizedComponent = () => {
     const dispatch = useDispatch();
-    const {todos} = useSelector(({notNormalizedTodos}) => ({
-        todos: notNormalizedTodos.todos,
-    }));
+
+    const {todos} = useSelector(({notNormalizedTodos}) => notNormalizedTodos);
+
+    /** Using our own primitive useSelector*/
+    // const todos = useMySelector(({notNormalizedTodos}) => notNormalizedTodos.todos);
 
     const updateTodo = useCallback(e => dispatch({
         type: 'EDIT_NOT_NORMALIZED_TODO',
@@ -17,11 +20,11 @@ export const NotNormalizedComponent = () => {
         },
     }), [dispatch]);
 
-        console.log(todos);
-
     return (
         <>
-            {todos.map(todo => (<NotNormalizedTodoItem key={todo.id} action={todo.action} id={todo.id} onChange={updateTodo}/>))}
+            {todos.map(todo => (
+                <NotNormalizedTodoItem key={todo.id} action={todo.action} id={todo.id} onChange={updateTodo}/>
+            ))}
         </>
     );
 };

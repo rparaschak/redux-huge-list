@@ -1,13 +1,18 @@
 import React, {useCallback} from 'react';
 import {useDispatch, useSelector, shallowEqual} from 'react-redux';
+
 import {notNormalizedTodos} from "../reducer";
 import {NormalizedTodoItem} from "./NormalizedTodoItem";
+import {useMySelector} from "../utils/useMySelector";
 
 export const NormalizedComponent = () => {
     console.log('NormalizedComponent render');
     const dispatch = useDispatch();
 
     const todosIds = useSelector(({normalizedTodos}) => normalizedTodos.todosIds);
+
+    /** Using our own primitive useSelector*/
+    //const todosIds = useMySelector(({normalizedTodos}) => normalizedTodos.todosIds);
 
     /** Other way */
     /** Pay attention to shallowEqual */

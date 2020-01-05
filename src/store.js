@@ -1,7 +1,8 @@
 import { createStore, combineReducers } from 'redux';
-import {normalizedTodos, notNormalizedTodos} from './reducer'
+import {normalizedTodos, notNormalizedTodos, incrementReducer} from './reducer'
 
 export default createStore(combineReducers({
     normalizedTodos,
-    notNormalizedTodos
+    notNormalizedTodos,
+    incrementReducer,
 }));
