@@ -1,8 +1,7 @@
 import React, {useCallback} from 'react';
 import {useDispatch, useSelector, shallowEqual} from 'react-redux';
 
-import {notNormalizedTodos} from "../reducer";
-import {NormalizedTodoItem} from "./NormalizedTodoItem";
+import {NormalizedTodoItemComponent} from "./NormalizedTodoItemComponent";
 import {useMySelector} from "../utils/useMySelector";
 
 export const NormalizedComponent = () => {
@@ -31,7 +30,7 @@ export const NormalizedComponent = () => {
     return (
         <>
             {todosIds.map(id => (
-                <NormalizedTodoItem key={id} todoId={id} onChange={updateTodo}/>
+                <NormalizedTodoItemComponent key={id} todoId={id} onChange={updateTodo}/>
             ))}
         </>
     );

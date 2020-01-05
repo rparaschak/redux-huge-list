@@ -1,9 +1,10 @@
 import React from 'react';
 import {Provider} from 'react-redux'
+import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+
 import store from './store';
 import {NotNormalizedComponent} from "./components/NotNormalizedComponent";
 import {NormalizedComponent} from "./components/NormalizedComponent";
-import {BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 
 import './App.css';
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export const NotNormalizedTodoItem = ({id, action, onChange}) => {
+export const NotNormalizedTodoItemComponent = ({id, action, onChange}) => {
     console.log('I did rerender.');
     return (
         <div>

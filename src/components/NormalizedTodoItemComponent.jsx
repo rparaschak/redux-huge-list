@@ -4,7 +4,7 @@ import {useSelector, shallowEqual} from 'react-redux';
 import {useMySelector} from '../utils/useMySelector'
 
 
-export const NormalizedTodoItem = ({todoId, onChange}) => {
+export const NormalizedTodoItemComponent = ({todoId, onChange}) => {
     console.log('I did rerender.');
 
     const todo = useMySelector(({normalizedTodos}) => normalizedTodos.todosById[todoId]);
